@@ -5,7 +5,16 @@ using UnityEngine.Networking;
 
 public class PlayerMovement : NetworkBehaviour
 {
-
+    void Start()
+    {
+        if (isServer)
+        {
+            GameState state = new GameState();
+        }
+        Debug.Log("Started");
+        Debug.Log(isServer);
+        Debug.Log(isLocalPlayer);
+    }
 
     void Update()
     {
